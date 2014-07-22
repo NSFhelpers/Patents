@@ -102,11 +102,30 @@
 <!-- /Header -->
   
   <ul id="stats">
-  <li class=""><a class="stat" href="http://www.chicagolobbyists.org/lobbyists"><strong>448</strong> Lobbyists</a></li>
-  <li class=""><a class="stat" href="http://www.chicagolobbyists.org/firms"><strong>239</strong>Lobbying firms</a></li>
-  <li id="paid"><span class="stat"><strong>$11,422,846</strong> Paid to lobbyists in 2010</span></li>
-    <li class=""><a class="stat" href="http://www.chicagolobbyists.org/clients"><strong>1,004</strong>Clients</a></li>
-  <li class=""><a class="stat" href="http://www.chicagolobbyists.org/agencies"><strong>3,171</strong>Actions sought</a></li>
+   <?php
+	   $con = mysql_connect('localhost', '[ username ]', '[ password ]');
+	   if (!$con) {
+		 die('Could not connect: ' . mysql_error());
+	   }
+	   
+	   mysql_select_db("nsf", $con);
+	   
+	   $yr = $_GET['year'];
+	   $str = "SELECT * FROM Stats WHERE qyear = " . $yr . " AND querytype = 'P'";
+	   
+	   $sth = mysql_query($str);
+
+	   while( $r = mysql_fetch_array($sth) )
+	   {
+		 echo "<li class=\"\"><a class=\"stat\"><strong>" . $r['PI'] . "</strong> Scientists </a></li>";
+		 echo "<li class=\"\"><a class=\"stat\"><strong>" . $r['Institution'] . "</strong> Institutions </a></li>";
+		 echo "<li id = \"paid\"><span class=\"stat\"><strong>" . $r['TotalPatents'] . "</strong> Total Patents in " . $r['QYear'] . "</span></li>";
+		 echo "<li class=\"\"><a class=\"stat\"><strong>" . $r['Directorate'] . "</strong> Directorates </a></li>";
+		 echo "<li class=\"\"><a class=\"stat\"><strong>" . $r['Division'] . "</strong> Divisions </a></li>";
+	   }
+	
+	   mysql_close($con);
+	 ?>
 </ul>
 <hr>
 
@@ -186,38 +205,60 @@
     
     <div class="c2r">
       <div class="section">
-        <h2>Highest-paid lobbying firms <a href="http://www.chicagolobbyists.org/firms">All firms »</a></h2>
-        <ul class="chartlist" id="home-firms">
-          <?php
-			
-          ?>
-          <li><a href="http://www.chicagolobbyists.org/firms/illinois-governmental-consulting-group-llc">" . $name .  "</a><span class="index" style="width: 100%;"></span><span class="count">$983,000</span></li>
-          
-          <li><a href="http://www.chicagolobbyists.org/firms/johnson-research-group">Johnson Research Group</a><span class="index" style="width: 85.24923702950153%;"></span><span class="count">$838,000</span></li>
-          
-          <li><a href="http://www.chicagolobbyists.org/firms/jay-d-doherty-and-associates">Jay D. Doherty &amp; Associates</a><span class="index" style="width: 78.50966429298067%;"></span><span class="count">$771,750</span></li>
-          
-          <li><a href="http://www.chicagolobbyists.org/firms/all-circo-inc">ALL-CIRCO, Inc.</a><span class="index" style="width: 68.64191251271617%;"></span><span class="count">$674,750</span></li>
-          
-          <li><a href="http://www.chicagolobbyists.org/firms/dla-piper-rudnick-gray-cary">DLA Piper Rudnick Gray Cary</a><span class="index" style="width: 68.26042726347914%;"></span><span class="count">$671,000</span></li>
-          
+        <h2>PI <a href="http://www.chicagolobbyists.org/firms">All PIs »</a></h2>
+        <ul class="chartlist" id="home-agencies">
+			<?php
+				$con = mysql_connect("localhost","[ username ]","[ password ]");
+				if (!$con) {
+				  die('Could not connect: ' . mysql_error());
+				}
+				
+				mysql_select_db("nsf", $con);
+				
+				$yr = $_GET['year'];
+				$str = "select concat( FirstName,' ',LastName) as Name, count( concat(FirstName,' ',LastName )) as Count  from PI, P2A, Patent_All p where year(patpubdate)=" . $yr . " and patno=patentno and PI.AwardID=P2A.awardid group by Name order by Count desc limit 5;";
+				
+				$sth = mysql_query($str);
+				
+				while($r = mysql_fetch_array($sth)) {
+					$num = $r['Count'];
+					$name = $r['Name'];
+					
+					echo "<li><a href = \"http://www.duckduckgo.com/?q=" . $name . "\">" . $name . "</a><span class=\"index\"> style=\"width: 100%;\"></span><span class=\"count\">" . $num ."</span></li>";
+					
+				}
+				
+				mysql_close($con);
+			?>
         </ul>
       </div>
       
       <div class="section">
-        <h2>Most lobbied city agencies <a href="http://www.chicagolobbyists.org/agencies">All agencies »</a></h2>
+        <h2>Institution <a href="http://www.chicagolobbyists.org/agencies">All institutions »</a></h2>
         <ul class="chartlist" id="home-agencies">
-          
-            <li><a href="http://www.chicagolobbyists.org/agencies/city-council">City Council</a><span class="index" style="width: 100%;"></span><span class="count">587</span></li>
-          
-            <li><a href="http://www.chicagolobbyists.org/agencies/dept-of-zoning-and-land-use-policy">Dept of Zoning and Land Use Policy</a><span class="index" style="width: 81.09028960817717%;"></span><span class="count">476</span></li>
-          
-            <li><a href="http://www.chicagolobbyists.org/agencies/dept-of-transportation">Dept of Transportation</a><span class="index" style="width: 42.759795570698465%;"></span><span class="count">251</span></li>
-          
-            <li><a href="http://www.chicagolobbyists.org/agencies/dept-of-community-development">Dept of Community Development</a><span class="index" style="width: 39.3526405451448%;"></span><span class="count">231</span></li>
-          
-            <li><a href="http://www.chicagolobbyists.org/agencies/dept-of-law">Dept of Law</a><span class="index" style="width: 24.020442930153322%;"></span><span class="count">141</span></li>
-          
+			<?php
+				$con = mysql_connect("localhost","[ username ]","[ password ]");
+				if (!$con) {
+				  die('Could not connect: ' . mysql_error());
+				}
+				
+				mysql_select_db("nsf", $con);
+				
+				$yr = $_GET['year'];
+				$str = "select Name, Count(name) as Count from Institution i, P2A,Patent_All p where year(patpubdate)=" . $yr . " and patno=patentno and i.awardid=P2A.awardid group by Name order by Count desc limit 5;";
+				
+				$sth = mysql_query($str);
+				
+				while($r = mysql_fetch_array($sth)) {
+					$num = $r['Count'];
+					$name = $r['Name'];
+					
+					echo "<li><a href = \"http://www.duckduckgo.com/?q=" . $name . "\">" . $name . "</a><span class=\"index\"> style=\"width: 100%;\"></span><span class=\"count\">" . $num ."</span></li>";
+					
+				}
+				
+				mysql_close($con);
+			?>
         </ul>
       </div>
     </div>
@@ -259,14 +300,14 @@ new TWTR.Widget({
 </script>
   </div>
   <h2>About this project</h2>
-    <p>ChicagoLobbyists.org is an open data, open government, and open source project by <a href="http://opencityapps.org/">Open City</a> intended to improve the transparency of interactions between the City of Chicago and lobbyists and their clients. All data comes from the <a href="http://data.cityofchicago.org/">City of Chicago Data Portal</a>. <a href="http://www.chicagolobbyists.org/about">Read more »</a></p>
+    <p>This project looks interestingly similar to ChicagoLobbyists.org, which is an open data, open government, and open source project by <a href="http://opencityapps.org/">Open City</a> intended to improve the transparency of interactions between the City of Chicago and lobbyists and their clients. All data comes from the <a href="http://data.cityofchicago.org/">City of Chicago Data Portal</a>. <a href="http://www.chicagolobbyists.org/about">Read more »</a></p>
 
 <h2>Contact us</h2>
-    <p>If you have any comments, questions, feature suggestions, or want to set this platform up for your city or municipality, you can email us at <a href="mailto:chi.lobbyists@gmail.com">chi.lobbyists@gmail.com</a> or tweet us at <a href="https://twitter.com/#!/chilobbyists">@chilobbyists</a>.</p>
+    <p> If you have any questions, comments, concern, or would like to contribute, please spam <a href = "fakemail.com"> fake_email@yes.com </a>. </p>
   
   <!-- Footer -->
 <div id="footer">
-  <p>Chicago Lobbyists designed and developed by <a href="http://opencityapps.org/">Open City</a>. Copyright © 2012.</p>
+  <p>This site was copied off of Chicago Lobbyists, which was designed and developed by <a href="http://opencityapps.org/">Open City</a>. Copyright © 2012.</p>
 </div>
 <!-- /Footer -->
 
