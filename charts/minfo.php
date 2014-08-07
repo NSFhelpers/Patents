@@ -2,7 +2,7 @@
 <!-- saved from url=(0032)http://www.chicagolobbyists.org/ -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<!-- Title -->
-	<title>Chicago Lobbyists</title>
+	<title>Patent Project</title>
 	<link rel="Shortcut Icon" href="http://www.chicagolobbyists.org/favicon.ico" type="image/x-icon">
 	
 	<!-- Info -->
@@ -90,7 +90,7 @@
 <div id="content">
   <!-- Header -->
 <div id="header">
-  <div id="logo"><a href="./minfo_files/minfo.php"><img alt="Chicago Lobbyists" src="./minfo_files/logo.png"></a></div>
+  <div id="logo"><a href="./minfo_files/minfo.php"><!--<img alt="Chicago Lobbyists" src="./minfo_files/logo.png" >--></a> </div>
   <div id="search">
   	<form action="http://www.chicagolobbyists.org/search" method="get">
 	    <input class="hint" type="text" title="Find…" name="q">
@@ -103,7 +103,7 @@
   
   <ul id="stats">
    <?php
-	   $con = mysql_connect('localhost', '[ username ]', '[ password ]');
+	   $con = mysql_connect('localhost', 'root', '');
 	   if (!$con) {
 		 die('Could not connect: ' . mysql_error());
 	   }
@@ -115,13 +115,12 @@
 	   
 	   $sth = mysql_query($str);
 
-	   while( $r = mysql_fetch_array($sth) )
-	   {
-		 echo "<li class=\"\"><a class=\"stat\"><strong>" . $r['PI'] . "</strong> Scientists </a></li>";
-		 echo "<li class=\"\"><a class=\"stat\"><strong>" . $r['Institution'] . "</strong> Institutions </a></li>";
-		 echo "<li id = \"paid\"><span class=\"stat\"><strong>" . $r['TotalPatents'] . "</strong> Total Patents in " . $r['QYear'] . "</span></li>";
-		 echo "<li class=\"\"><a class=\"stat\"><strong>" . $r['Directorate'] . "</strong> Directorates </a></li>";
-		 echo "<li class=\"\"><a class=\"stat\"><strong>" . $r['Division'] . "</strong> Divisions </a></li>";
+	   while( $r = mysql_fetch_array($sth) ) {
+		   echo "<li class=\"\"><a class=\"stat\"><strong>" . $r['PI'] . "</strong> Scientists </a></li>";
+		   echo "<li class=\"\"><a class=\"stat\"><strong>" . $r['Institution'] . "</strong> Institutions </a></li>";
+		   echo "<li id = \"paid\"><span class=\"stat\"><strong>" . $r['TotalPatents'] . "</strong> Total Patents in " . $r['QYear'] . "</span></li>";
+		   echo "<li class=\"\"><a class=\"stat\"><strong>" . $r['Directorate'] . "</strong> Directorates </a></li>";
+		   echo "<li class=\"\"><a class=\"stat\"><strong>" . $r['Division'] . "</strong> Divisions </a></li>";
 	   }
 	
 	   mysql_close($con);
@@ -148,7 +147,7 @@
         <h2> Directorate <a href="http://www.chicagolobbyists.org/lobbyists">All directorates »</a></h2>
         <ul class="chartlist" id="home-agencies">
 			<?php
-				$con = mysql_connect("localhost","[ username ]","[ password ]");
+				$con = mysql_connect("localhost","root","");
 				if (!$con) {
 				  die('Could not connect: ' . mysql_error());
 				}
@@ -156,7 +155,14 @@
 				mysql_select_db("nsf", $con);
 				
 				$yr = $_GET['year'];
-				$str = "select Count(OrganizationDirectorate) as Count, OrganizationDirectorate from Award a, P2A p, Patent_All pa where a.awardid=p.awardid and p.patno=pa.patentno and year(pa.patpubdate)=" . $yr . " group by OrganizationDirectorate order by Count desc limit 5;";
+				$str = "";
+				
+				if($_GET['type'] == 'P') {
+					$str = "select Count(OrganizationDirectorate) as Count, OrganizationDirectorate from Award a, P2A p, Patent_All pa where a.awardid=p.awardid and p.patno=pa.patentno and year(pa.patpubdate)=" . $yr . " group by OrganizationDirectorate order by Count desc limit 5;";
+				}
+				else {
+					$str = "select count(*) as Count, OrganizationDirectorate from Award a, P2A p where a.awardid=p.awardid  and year(AwardEffectiveDate)=" . $yr . " group by OrganizationDirectorate order by Count desc limit 5;";
+				}
 				
 				$sth = mysql_query($str);
 				
@@ -177,7 +183,7 @@
         <h2> Division <a href="http://www.chicagolobbyists.org/clients">All divisions »</a></h2>
         <ul class="chartlist" id="home-agencies">
 			<?php
-				$con = mysql_connect("localhost","[ username ]","[ password ]");
+				$con = mysql_connect("localhost","root","");
 				if (!$con) {
 				  die('Could not connect: ' . mysql_error());
 				}
@@ -185,7 +191,14 @@
 				mysql_select_db("nsf", $con);
 				
 				$yr = $_GET['year'];
-				$str = "select Count(OrganizationDivision) as Count, OrganizationDivision from Award a, P2A p, Patent_All pa where a.awardid=p.awardid and p.patno=pa.patentno and year(pa.patpubdate)=" . $yr . " group by OrganizationDivision order by Count desc limit 5;";
+				$str = "";
+				
+				if($_GET['type'] == 'P') {
+					$str = "select Count(OrganizationDivision) as Count, OrganizationDivision from Award a, P2A p, Patent_All pa where a.awardid=p.awardid and p.patno=pa.patentno and year(pa.patpubdate)=" . $yr . " group by OrganizationDivision order by Count desc limit 5;";
+				}
+				else {
+					$str = "select count(*) as Count, OrganizationDivision from Award a, P2A p where a.awardid=p.awardid  and year(AwardEffectiveDate)=" . $yr . " group by OrganizationDivision order by Count desc limit 5;";
+				}
 				
 				$sth = mysql_query($str);
 				
@@ -194,7 +207,6 @@
 					$name = $r['OrganizationDivision'];
 					
 					echo "<li><a href = \"http://www.duckduckgo.com/?q=" . $name . "\">" . $name . "</a><span class=\"index\"> style=\"width: 100%;\"></span><span class=\"count\">" . $num ."</span></li>";
-					
 				}
 				
 				mysql_close($con);
@@ -205,10 +217,10 @@
     
     <div class="c2r">
       <div class="section">
-        <h2>PI <a href="http://www.chicagolobbyists.org/firms">All PIs »</a></h2>
+        <h2>Scientists <a href="http://www.chicagolobbyists.org/firms">All Scientists »</a></h2>
         <ul class="chartlist" id="home-agencies">
 			<?php
-				$con = mysql_connect("localhost","[ username ]","[ password ]");
+				$con = mysql_connect("localhost","root","");
 				if (!$con) {
 				  die('Could not connect: ' . mysql_error());
 				}
@@ -216,7 +228,14 @@
 				mysql_select_db("nsf", $con);
 				
 				$yr = $_GET['year'];
-				$str = "select concat( FirstName,' ',LastName) as Name, count( concat(FirstName,' ',LastName )) as Count  from PI, P2A, Patent_All p where year(patpubdate)=" . $yr . " and patno=patentno and PI.AwardID=P2A.awardid group by Name order by Count desc limit 5;";
+				$str = "";
+				
+				if($_GET['type'] == 'P') {
+					$str = "select concat( FirstName,' ',LastName) as Name, count( concat(FirstName,' ',LastName )) as Count  from PI, P2A, Patent_All p where year(patpubdate)=" . $yr . " and patno=patentno and PI.AwardID=P2A.awardid group by Name order by Count desc limit 5;";
+				}
+				else {
+					$str = "select concat( LastName, ' ', FirstName ) as Name, count( concat(FirstName,' ', LastName) ) as Count from PI i, P2A p where i.AwardID = p.AwardID and Year(StartDate)=" . $yr . " group by firstname, lastname order by Count desc limit 5;";
+				}
 				
 				$sth = mysql_query($str);
 				
@@ -237,7 +256,7 @@
         <h2>Institution <a href="http://www.chicagolobbyists.org/agencies">All institutions »</a></h2>
         <ul class="chartlist" id="home-agencies">
 			<?php
-				$con = mysql_connect("localhost","[ username ]","[ password ]");
+				$con = mysql_connect("localhost","root","");
 				if (!$con) {
 				  die('Could not connect: ' . mysql_error());
 				}
@@ -245,7 +264,15 @@
 				mysql_select_db("nsf", $con);
 				
 				$yr = $_GET['year'];
-				$str = "select Name, Count(name) as Count from Institution i, P2A,Patent_All p where year(patpubdate)=" . $yr . " and patno=patentno and i.awardid=P2A.awardid group by Name order by Count desc limit 5;";
+				$str = "";
+				
+				if($_GET['type'] == 'P') {
+					$str = "select Name, Count(name) as Count from Institution i, P2A,Patent_All p where year(patpubdate)=" . $yr . " and patno=patentno and i.awardid=P2A.awardid group by Name order by Count desc limit 5;";
+				}
+				else {
+					//$str = "select Name, Count(name) as Count from Institution where AwardID in (select a.awardid from Award a, P2A p where a.awardid=p.awardid and year(a.AwardEffectiveDate)=" . $yr . ") group by name order by Count desc limit 5;";
+					//something wrong with this query never loads
+				}
 				
 				$sth = mysql_query($str);
 				
@@ -300,14 +327,14 @@ new TWTR.Widget({
 </script>
   </div>
   <h2>About this project</h2>
-    <p>This project looks interestingly similar to ChicagoLobbyists.org, which is an open data, open government, and open source project by <a href="http://opencityapps.org/">Open City</a> intended to improve the transparency of interactions between the City of Chicago and lobbyists and their clients. All data comes from the <a href="http://data.cityofchicago.org/">City of Chicago Data Portal</a>. <a href="http://www.chicagolobbyists.org/about">Read more »</a></p>
+    <p>This project was based off of ChicagoLobbyists.org, which is an open data, open government, and open source project by <a href="http://opencityapps.org/">Open City</a> intended to improve the transparency of interactions between the City of Chicago and lobbyists and their clients. All data comes from the <a href="http://data.cityofchicago.org/">City of Chicago Data Portal</a>. <a href="http://www.chicagolobbyists.org/about">Read more »</a></p>
 
 <h2>Contact us</h2>
-    <p> If you have any questions, comments, concern, or would like to contribute, please spam <a href = "fakemail.com"> fake_email@yes.com </a>. </p>
+    <p> If you have any questions, comments, concern, or would like to contribute, please email <a href = "fakemail.com"> fake_email@yes.com </a>. </p>
   
   <!-- Footer -->
 <div id="footer">
-  <p>This site was copied off of Chicago Lobbyists, which was designed and developed by <a href="http://opencityapps.org/">Open City</a>. Copyright © 2012.</p>
+  <p>This site was based off of Chicago Lobbyists, which was designed and developed by <a href="http://opencityapps.org/">Open City</a>. Copyright © 2012.</p>
 </div>
 <!-- /Footer -->
 
