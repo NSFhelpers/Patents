@@ -8,8 +8,6 @@
   <!-- webmaster-tools <meta name="google-site-verification" content="6oHOT6PXw490mF1qyuiToMoG96gA85-kTbNYyL3UtTo" /> -->
   <meta name="google-site-verification" content="LjG-SeitOaHlivMGUN2L6jXAu_iRkxIfkqDMo0tlZAk">	<!-- Styles -->
 	<link rel="stylesheet" type="text/css" media="all" href="./Chicago Lobbyists_files/master.css">
-
-	<!-- JavaScript -->
   <script newtype="text/javascript" async="" src="./Chicago Lobbyists_files/ga.js"></script><script src="./Chicago Lobbyists_files/jquery.min.js" type="text/javascript"></script>
   <script src="./Chicago Lobbyists_files/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
 	<script src="./Chicago Lobbyists_files/jquery.ezpz_hint.min.js" type="text/javascript"></script>
