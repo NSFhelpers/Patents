@@ -12,8 +12,6 @@
 	
 	<!-- Styles -->
 	<link rel="stylesheet" type="text/css" media="all" href="./Chicago Lobbyists_files/master.css">
-
-	<!-- JavaScript -->
   <script type="text/javascript" async="" src="./Chicago Lobbyists_files/ga.js"></script><script src="./Chicago Lobbyists_files/jquery.min.js" type="text/javascript"></script>
   <script src="./Chicago Lobbyists_files/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
 	<script src="./Chicago Lobbyists_files/jquery.ezpz_hint.min.js" type="text/javascript"></script>
