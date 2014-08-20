@@ -2,7 +2,7 @@
 <!-- saved from url=(0032)http://www.chicagolobbyists.org/ -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<!-- Title -->
-	<title>Chicago Lobbyists</title>
+	<title>TJHSST</title>
 	<link rel="Shortcut Icon" href="http://www.chicagolobbyists.org/favicon.ico" type="image/x-icon">
 	
 	<!-- Info -->
