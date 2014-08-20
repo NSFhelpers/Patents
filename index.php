@@ -4,9 +4,7 @@
 	<!-- Title -->
 	<title>TJHSST</title>
 	<link rel="Shortcut Icon" href="http://www.chicagolobbyists.org/favicon.ico" type="image/x-icon">
-	
-	<!-- Info -->
-	
+
   <!-- webmaster-tools <meta name="google-site-verification" content="6oHOT6PXw490mF1qyuiToMoG96gA85-kTbNYyL3UtTo" /> -->
   <meta name="google-site-verification" content="LjG-SeitOaHlivMGUN2L6jXAu_iRkxIfkqDMo0tlZAk">	<!-- Styles -->
 	<link rel="stylesheet" type="text/css" media="all" href="./Chicago Lobbyists_files/master.css">
