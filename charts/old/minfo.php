@@ -11,18 +11,18 @@
   <meta name="google-site-verification" content="LjG-SeitOaHlivMGUN2L6jXAu_iRkxIfkqDMo0tlZAk">
 	
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" media="all" href="./Chicago Lobbyists_files/master.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./minfo_files/master.css">
 
 	<!-- JavaScript -->
-  <script type="text/javascript" async="" src="./Chicago Lobbyists_files/ga.js" style=""></script><script src="./Chicago Lobbyists_files/jquery.min.js" type="text/javascript"></script>
-  <script src="./Chicago Lobbyists_files/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
-	<script src="./Chicago Lobbyists_files/jquery.ezpz_hint.min.js" type="text/javascript"></script>
-	<script src="./Chicago Lobbyists_files/jquery.dataTables.js" type="text/javascript"></script>
-	<script src="./Chicago Lobbyists_files/dataTables.sorting.js" type="text/javascript"></script>
-	<script src="./Chicago Lobbyists_files/jquery.formatCurrency-1.4.0.min.js" type="text/javascript"></script>
-	<script src="./Chicago Lobbyists_files/listing.bars.js" type="text/javascript"></script>
-  <script src="./Chicago Lobbyists_files/js" type="text/javascript"></script><script src="./Chicago Lobbyists_files/main.js" type="text/javascript"></script>
-  <script src="./Chicago Lobbyists_files/analytics_lib.js" type="text/javascript"></script>
+  <script type="text/javascript" async="" src="./minfo_files/ga.js" style=""></script><script src="./minfo_files/jquery.min.js" type="text/javascript"></script>
+  <script src="./minfo_files/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+	<script src="./minfo_files/jquery.ezpz_hint.min.js" type="text/javascript"></script>
+	<script src="./minfo_files/jquery.dataTables.js" type="text/javascript"></script>
+	<script src="./minfo_files/dataTables.sorting.js" type="text/javascript"></script>
+	<script src="./minfo_files/jquery.formatCurrency-1.4.0.min.js" type="text/javascript"></script>
+	<script src="./minfo_files/listing.bars.js" type="text/javascript"></script>
+  <script src="./minfo_files/js" type="text/javascript"></script><script src="./minfo_files/main.js" type="text/javascript"></script>
+  <script src="./minfo_files/analytics_lib.js" type="text/javascript"></script>
 	
 	<script type="text/javascript">
     var geocoder = new google.maps.Geocoder();
@@ -72,13 +72,13 @@
       });
     }
   </script>
-<script type="text/javascript" charset="UTF-8" src="./Chicago Lobbyists_files/{common,util,geocoder}.js"></script><script type="text/javascript" charset="UTF-8" src="./Chicago Lobbyists_files/{stats}.js"></script></head>
+<script type="text/javascript" charset="UTF-8" src="./minfo_files/{common,util,geocoder}.js"></script><script type="text/javascript" charset="UTF-8" src="./minfo_files/{stats}.js"></script></head>
 <body>
 
 <div id="nav">
   <div id="nav-content">
     <ul>
-      <li class="current"><a href="./Chicago Lobbyists_files/minfo.php">Home</a></li>
+      <li class="current"><a href="./minfo_files/minfo.php">Home</a></li>
       <li class=""><a href="http://www.chicagolobbyists.org/about">About</a></li>
       <li><a href="http://blog.chicagolobbyists.org/">Blog</a></li>
     </ul>
@@ -90,7 +90,7 @@
 <div id="content">
   <!-- Header -->
 <div id="header">
-  <div id="logo"><a href="./Chicago Lobbyists_files/Chicago Lobbyists.htm"><img alt="Chicago Lobbyists" src="./cfa_brigade_logo.png"></a></div>
+  <div id="logo"><a href="./minfo_files/minfo.php"><!--<img alt="Chicago Lobbyists" src="./minfo_files/logo.png" >--></a> </div>
   <div id="search">
   	<form action="http://www.chicagolobbyists.org/search" method="get">
 	    <input class="hint" type="text" title="Find…" name="q">
@@ -109,16 +109,17 @@
 		}
 		
 		$yr = $_GET['year'];
-		$str = "SELECT * FROM Stats WHERE qyear = " . $yr . " AND querytype =\"" . $_GET['type'] . "\";";
+		$str = "SELECT * FROM Stats WHERE qyear = " . $yr . " AND querytype = 'P'";
 		
 		$sth = mysqli_query($con, $str);
 		
-		while( $r = mysqli_fetch_array($sth) ) {
-		  echo "<li class=\"\"><a href=\"lists.php?type=" . $_GET['type'] . "&year=" . $yr . "&category=Scientist\" class=\"stat\"><strong>" . $r['PI'] . "</strong> Scientists </a></li>";
-		  echo "<li class=\"\"><a href=\"lists.php?type=" . $_GET['type'] . "&year=" . $yr . "&category=Institution\" class=\"stat\"><strong>" . $r['Institution'] . "</strong> Institutions </a></li>";
+		while( $r = mysqli_fetch_array($sth) ) 
+		{
+		  echo "<li class=\"\"><a class=\"stat\"><strong>" . $r['PI'] . "</strong> Scientists </a></li>";
+		  echo "<li class=\"\"><a class=\"stat\"><strong>" . $r['Institution'] . "</strong> Institutions </a></li>";
 		  echo "<li id = \"paid\"><span class=\"stat\"><strong>" . $r['TotalPatents'] . "</strong> Total Patents in " . $r['QYear'] . "</span></li>";
-		  echo "<li class=\"\"><a href=\"lists.php?type=" . $_GET['type'] . "&year=" . $yr . "&category=Directorate\" class=\"stat\"><strong>" . $r['Directorate'] . "</strong> Directorates </a></li>";
-		  echo "<li class=\"\"><a href=\"lists.php?type=" . $_GET['type'] . "&year=" . $yr . "&category=Division\" class=\"stat\"><strong>" . $r['Division'] . "</strong> Divisions </a></li>";
+		  echo "<li class=\"\"><a class=\"stat\"><strong>" . $r['Directorate'] . "</strong> Directorates </a></li>";
+		  echo "<li class=\"\"><a class=\"stat\"><strong>" . $r['Division'] . "</strong> Divisions </a></li>";
 		}
 		
 		mysqli_close($con);
@@ -129,9 +130,9 @@
   
   <script type="text/javascript">
     $(function(){
-    	setUlBarWidthByNumber('home-lobbyists');
-    	setUlBarWidthByNumber('home-firms');
-    	setUlBarWidthByNumber('home-clients');
+    	setUlBarWidthByCurrency('home-lobbyists');
+    	setUlBarWidthByCurrency('home-firms');
+    	setUlBarWidthByCurrency('home-clients');
     	setUlBarWidthByNumber('home-agencies');
     });
     
@@ -142,18 +143,15 @@
   <div id="dashboard">
     <div class="c2l">
       <div class="section">
-      	<?php
-      	$yr = $_GET['year'];
-      	$yr = $_GET['year'];
-
-        echo "<h2> Directorate <a href=\"lists.php?type=" . $_GET['type'] . "&year=" . $yr . "&category=Directorate";
-        echo "\">All Directorates »</a></h2><ul class=\"chartlist\" id=\"home-lobbyists\">";
-
+        <h2> Directorate <a href="http://www.chicagolobbyists.org/lobbyists">All directorates »</a></h2>
+        <ul class="chartlist" id="home-agencies">
+			<?php
 				$con = mysqli_connect("localhost","root","","nsf");
 				if( mysqli_connect_errno() ) {
 				  die('Could not connect: ' . mysqli_error());
 				}
 				
+				$yr = $_GET['year'];
 				$str = "";
 				
 				if($_GET['type'] == 'P') {
@@ -169,7 +167,7 @@
 					$num = $r['Count'];
 					$name = $r['OrganizationDirectorate'];
 					
-					echo "<li><a href = \"details.php?type=" . $_GET['type'] ."&year=" . $yr . "&category=dir&orgdir=" . urlencode( $name ) . "\">" . $name . "</a><span class=\"index\"> style=\"width: 100%;\"></span><span class=\"count\">" . $num ."</span></li>";
+					echo "<li><a href = \"http://www.duckduckgo.com/?q=" . $name . "\">" . $name . "</a><span class=\"index\"> style=\"width: 100%;\"></span><span class=\"count\">" . $num ."</span></li>";
 					
 				}
 				
@@ -179,16 +177,15 @@
       </div>
       
       <div class="section">
-      	<?php
-      	$yr = $_GET['year'];
-      	echo "<h2> Division <a href=\"lists.php?type=" . $_GET['type'] . "&year=" . $yr . "&category=Division";
-      	echo "\">All Divisions »</a></h2><ul class=\"chartlist\" id=\"home-firms\">";
-			
+        <h2> Division <a href="http://www.chicagolobbyists.org/clients">All divisions »</a></h2>
+        <ul class="chartlist" id="home-agencies">
+			<?php
 				$con = mysqli_connect("localhost","root","","nsf");
 				if( mysqli_connect_errno() ) {
 				  die('Could not connect: ' . mysqli_error());
 				}
 				
+				$yr = $_GET['year'];
 				$str = "";
 				
 				if($_GET['type'] == 'P') {
@@ -204,7 +201,7 @@
 					$num = $r['Count'];
 					$name = $r['OrganizationDivision'];
 					
-					echo "<li><a href = \"details.php?type=" . $_GET['type'] ."&year=" . $yr . "&category=div&orgdiv=" . urlencode( $name ) . "\">" . $name . "</a><span class=\"index\"> style=\"width: 100%;\"></span><span class=\"count\">" . $num ."</span></li>";
+					echo "<li><a href = \"http://www.duckduckgo.com/?q=" . $name . "\">" . $name . "</a><span class=\"index\"> style=\"width: 100%;\"></span><span class=\"count\">" . $num ."</span></li>";
 				}
 				
 				mysqli_close($con);
@@ -215,36 +212,32 @@
     
     <div class="c2r">
       <div class="section">
-      	<?php
-      	$yr = $_GET['year'];
-        echo "<h2>Scientists <a href=\"lists.php?type=" . $_GET['type'] . "&year=" . $yr . "&category=Scientist";
-        echo "\">All Scientists »</a></h2><ul class=\"chartlist\" id=\"home-clients\">";
-			
+        <h2>Scientists <a href="http://www.chicagolobbyists.org/firms">All Scientists »</a></h2>
+        <ul class="chartlist" id="home-agencies">
+			<?php
 				$con = mysqli_connect("localhost","root","","nsf");
 				if( mysqli_connect_errno() ) {
 				  die('Could not connect: ' . mysqli_error());
 				}
 				
+				$yr = $_GET['year'];
 				$str = "";
 				
 				if($_GET['type'] == 'P') {
-					$str = "select FirstName as firstname, LastName as lastname, concat( FirstName,' ',LastName) as Name, count( concat(FirstName,' ',LastName )) as Count  from PI, P2A, Patent_All p where year(patpubdate)=" . $yr . " and patno=patentno and PI.AwardID=P2A.awardid group by Name order by Count desc limit 5;";
+					$str = "select concat( FirstName,' ',LastName) as Name, count( concat(FirstName,' ',LastName )) as Count  from PI, P2A, Patent_All p where year(patpubdate)=" . $yr . " and patno=patentno and PI.AwardID=P2A.awardid group by Name order by Count desc limit 5;";
 				}
 				else {
-					$str = "select FirstName as firstname, LastName as lastname, concat( FirstName, ' ', LastName ) as Name, count( concat(FirstName,' ', LastName) ) as Count from PI i, P2A p where i.AwardID = p.AwardID and Year(StartDate)=" . $yr . " group by firstname, lastname order by Count desc limit 5;";
+					$str = "select concat( LastName, ' ', FirstName ) as Name, count( concat(FirstName,' ', LastName) ) as Count from PI i, P2A p where i.AwardID = p.AwardID and Year(StartDate)=" . $yr . " group by firstname, lastname order by Count desc limit 5;";
 				}
 				
 				$sth = mysqli_query($con, $str);
 				
-				//echo $str;
-				
 				while($r = mysqli_fetch_array($sth)) {
 					$num = $r['Count'];
 					$name = $r['Name'];
-					$firstname = $r['firstname'];
-					$lastname = $r['lastname'];
 					
-					echo "<li><a href = \"details.php?type=" . $_GET['type'] ."&year=" . $yr . "&category=pi&firstname=" . urlencode( $firstname ) . "&lastname=" . urlencode( $lastname ) . "\">" . $name . "</a><span class=\"index\"> style=\"width: 100%;\"></span><span class=\"count\">" . $num ."</span></li>";
+					echo "<li><a href = \"http://www.duckduckgo.com/?q=" . $name . "\">" . $name . "</a><span class=\"index\"> style=\"width: 100%;\"></span><span class=\"count\">" . $num ."</span></li>";
+					
 				}
 				
 				mysqli_close($con);
@@ -253,17 +246,15 @@
       </div>
       
       <div class="section">
-      	<?php
-      	$yr = $_GET['year'];
-
-        echo "<h2>Institution <a href=\"lists.php?type=" . $_GET['type'] . "&year=" . $yr . "&category=Institution";
-        echo "\">All institutions »</a></h2><ul class=\"chartlist\" id=\"home-agencies\">";
-
+        <h2>Institution <a href="http://www.chicagolobbyists.org/agencies">All institutions »</a></h2>
+        <ul class="chartlist" id="home-agencies">
+			<?php
 				$con = mysqli_connect("localhost","root","","nsf");
 				if(mysqli_connect_errno()) {
 				  die('Could not connect: ' . mysqli_error());
 				}
 				
+				$yr = $_GET['year'];
 				$str = "";
 				
 				if($_GET['type'] == 'P') {
@@ -271,6 +262,7 @@
 				}
 				else {
 					$str = "select Name, Count(name) as Count from Institution where AwardID in (select a.awardid from Award a, P2A p where a.awardid=p.awardid and year(a.AwardEffectiveDate)=" . $yr . ") group by name order by Count desc limit 5;";
+					//something wrong with this query never loads
 				}
 				
 				$sth = mysqli_query($con, $str);
@@ -279,7 +271,7 @@
 					$num = $r['Count'];
 					$name = $r['Name'];
 					
-					echo "<li><a href = \"details.php?type=" . $_GET['type'] ."&year=" . $yr . "&category=inst&name=" . urlencode( $name ) . "\">" . $name . "</a><span class=\"index\"> style=\"width: 100%;\"></span><span class=\"count\">" . $num ."</span></li>";
+					echo "<li><a href = \"http://www.duckduckgo.com/?q=" . $name . "\">" . $name . "</a><span class=\"index\"> style=\"width: 100%;\"></span><span class=\"count\">" . $num ."</span></li>";
 					
 				}
 				
@@ -293,7 +285,7 @@
   
   <hr>
   <div class="content-secondary">
-  	<script src="./Chicago Lobbyists_files/widget.js"></script>
+  	<script src="./minfo_files/widget.js"></script>
 <script>
 new TWTR.Widget({
   version: 2,

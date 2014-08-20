@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://www.chicagolobbyists.org/lobbyists -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- Title -->
+	<title>Lobbyists - Chicago Lobbyists</title>
+	<link rel="Shortcut Icon" href="http://www.chicagolobbyists.org/favicon.ico" type="image/x-icon">
+	
+	<!-- Info -->
+	
+  <!-- webmaster-tools <meta name="google-site-verification" content="6oHOT6PXw490mF1qyuiToMoG96gA85-kTbNYyL3UtTo" /> -->
+  <meta name="google-site-verification" content="LjG-SeitOaHlivMGUN2L6jXAu_iRkxIfkqDMo0tlZAk">
+	
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" media="all" href="./scientists - Chicago Ripoff_files/master.css">
+
+	<!-- JavaScript -->
+  <script type="text/javascript" async="" src="./scientists - Chicago Ripoff_files/ga.js"></script><script src="./scientists - Chicago Ripoff_files/jquery.min.js" type="text/javascript"></script>
+  <script src="./scientists - Chicago Ripoff_files/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+	<script src="./scientists - Chicago Ripoff_files/jquery.ezpz_hint.min.js" type="text/javascript"></script>
+	<script src="./scientists - Chicago Ripoff_files/jquery.dataTables.js" type="text/javascript"></script>
+	<script src="./scientists - Chicago Ripoff_files/dataTables.sorting.js" type="text/javascript"></script>
+	<script src="./scientists - Chicago Ripoff_files/jquery.formatCurrency-1.4.0.min.js" type="text/javascript"></script>
+	<script src="./scientists - Chicago Ripoff_files/listing.bars.js" type="text/javascript"></script>
+  <script src="./scientists - Chicago Ripoff_files/js" type="text/javascript"></script><script src="./scientists - Chicago Ripoff_files/main.js" type="text/javascript"></script>
+  <script src="./scientists - Chicago Ripoff_files/analytics_lib.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+    var geocoder = new google.maps.Geocoder();
+    var map = null;
+    var map_bounds = new google.maps.LatLngBounds();
+
+    function defineMap(latlng) {
+      var myOptions = {
+        zoom: 13,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControl: false,
+        scrollwheel: false,
+        
+      };
+      map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+      
+      var city_hall_latLang = new google.maps.LatLng(41.883205,-87.630204);
+      var city_hall_MarkerImage = 'http://chicagolobbyists.org/images/city-hall.png';
+      var city_hall = new google.maps.Marker({
+          map: map,
+          position: city_hall_latLang,
+          icon: city_hall_MarkerImage,
+          title: 'City Hall'
+        });
+    }
+
+    function geocode(address) {
+      geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          if (map != null) {
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+            });
+            map_bounds.extend(results[0].geometry.location);
+            map.fitBounds(map_bounds);
+
+            if (map.zoom > 13) {
+              map.setZoom(13);
+            }
+          } else {
+            alert("Geocode was not successful for the following reason: " + status);
+          }
+        }
+      });
+    }
+  </script>
+<style type="text/css"></style><script type="text/javascript" charset="UTF-8" src="./scientists - Chicago Ripoff_files/{common,util,geocoder}.js"></script><script type="text/javascript" charset="UTF-8" src="./scientists - Chicago Ripoff_files/{stats}.js"></script></head>
+<body>
+
+<div id="nav">
+  <div id="nav-content">
+    <ul>
+      <li class=""><a href="http://www.chicagolobbyists.org/">Home</a></li>
+      <li class=""><a href="http://www.chicagolobbyists.org/about">About</a></li>
+      <li><a href="http://blog.chicagolobbyists.org/">Blog</a></li>
+    </ul>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<!-- Content -->
+<div id="content">
+  <!-- Header -->
+<div id="header">
+  <div id="logo"><a href="http://www.chicagolobbyists.org/"><img alt="Chicago Lobbyists" src="./scientists - Chicago Ripoff_files/logo.png"></a></div>
+  <div id="search">
+  	<form action="http://www.chicagolobbyists.org/search" method="get">
+	    <input class="hint" type="text" title="Find…" name="q">
+	    <input type="submit" value="Search">
+	  </form>
+  </div>
+  <div class="clear"></div>
+</div>
+<!-- /Header -->
+  <ul id="stats">
+  <li class="current"><a class="stat" href="./scientists - Chicago Ripoff_files/scientists - Chicago Ripoff.htm"><strong>448</strong> Lobbyists</a></li>
+  <li class=""><a class="stat" href="http://www.chicagolobbyists.org/firms"><strong>239</strong>Lobbying firms</a></li>
+  <li id="paid"><span class="stat"><strong>$11,422,846</strong> Paid to lobbyists in 2010</span></li>
+    <li class=""><a class="stat" href="http://www.chicagolobbyists.org/clients"><strong>1,004</strong>Clients</a></li>
+  <li class=""><a class="stat" href="http://www.chicagolobbyists.org/agencies"><strong>3,171</strong>Actions sought</a></li>
+</ul>
+<hr>
+
+  
+  <script type="text/javascript">
+    $(function(){
+      setBarWidthByCurrency();
+
+      $("#listing").dataTable({
+        "aoColumns": [
+          null,
+          { "sSortDataType": "dom-text", "sType": "currency" }
+        ],
+        "aaSorting": [[1, "desc"], [0, "asc"]],
+        "bFilter": false,
+        "bInfo": false,
+        "bPaginate": false
+      });
+    });
+    
+  </script>
+  
+  <div class="clear"></div>
+  
+  <h1>Lobbyists</h1>
+  
+  <div class="dataTables_wrapper" id="listing_wrapper"><table id="listing" class="listing">
+    <thead>
+      <tr><th class="sorting_asc" rowspan="1" colspan="1" style="width: 472px;"><span>Lobbyist</span></th><th class="sorting_desc" rowspan="1" colspan="1" style="width: 472px;"><span>Amount billed in 2010</span></th></tr>
+    </thead>
+    
+  <tbody><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/theodore-brunsvold">Theodore Brunsvold</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 100%;"><strong>$978,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/ronald-johnson">Ronald Johnson</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 85.68507157464212%;"><strong>$838,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jay-doherty">Jay Doherty</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 78.91104294478528%;"><strong>$771,750</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/john-kelly-jr">John Kelly, Jr.</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 68.37934560327199%;"><strong>$668,750</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/thomas-murphy">Thomas Murphy</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 36.86094069529652%;"><strong>$360,500</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/david-dring">David Dring</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 34.8159509202454%;"><strong>$340,500</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/scott-saef">Scott Saef</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 31.901840490797547%;"><strong>$312,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/terry-gabinski">Terry Gabinski</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 28.22085889570552%;"><strong>$276,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/mary-minaghan">Mary Minaghan</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 23.210633946830267%;"><strong>$227,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/timothy-dart">Timothy Dart</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 23.006134969325153%;"><strong>$225,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/michael-laube">Michael Laube</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 20.552147239263803%;"><strong>$201,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/theodore-novak">Theodore Novak</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 19.427402862985684%;"><strong>$190,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jan-starr">Jan Starr</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 19.399284253578735%;"><strong>$189,725</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/richard-klawiter">Richard Klawiter</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 17.38241308793456%;"><strong>$170,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/graham-grady">Graham Grady</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 17.229038854805726%;"><strong>$168,500</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/aarti-kotak">Aarti Kotak</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 15.848670756646216%;"><strong>$155,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/donna-pugh">Donna Pugh</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 15.61912065439673%;"><strong>$152,755</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/demetrius-carney">Demetrius Carney</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 15.439672801635993%;"><strong>$151,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/john-george">John George</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 15.265848670756647%;"><strong>$149,300</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/langdon-neal">Langdon Neal</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 14.50920245398773%;"><strong>$141,900</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/william-griffin">William Griffin</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 14.11042944785276%;"><strong>$138,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/david-reifman">David Reifman</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 13.905930470347649%;"><strong>$136,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/john-doerrer">John Doerrer</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 13.905930470347649%;"><strong>$136,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/joseph-gattuso">Joseph Gattuso</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 13.394683026584866%;"><strong>$131,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/paul-shadle">Paul Shadle</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 12.678936605316974%;"><strong>$124,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/william-dickett">William Dickett</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 11.758691206543967%;"><strong>$115,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/betsy-sales">Betsy Sales</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 11.451942740286299%;"><strong>$112,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/danielle-cassel">Danielle Cassel</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 10.940695296523517%;"><strong>$107,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/michael-cassidy">Michael Cassidy</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 10.224948875255624%;"><strong>$100,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/elizabeth-friedgut">Elizabeth Friedgut</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 9.202453987730062%;"><strong>$90,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/nicole-janes">Nicole Janes</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 9.202453987730062%;"><strong>$90,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/richard-boykin">Richard Boykin</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 9.202453987730062%;"><strong>$90,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/rolando-acosta">Rolando Acosta</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 8.997955010224949%;"><strong>$88,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/thomas-moore">Thomas Moore</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 8.3640081799591%;"><strong>$81,800</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/brian-bernardoni">Brian Bernardoni</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 8.1799591002045%;"><strong>$80,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/thomas-hynes">Thomas Hynes</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 8.1799591002045%;"><strong>$80,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/mary-richardson-lowry">Mary Richardson-Lowry</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 7.7198364008179965%;"><strong>$75,500</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/marcus-nunes">Marcus Nunes</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 7.05521472392638%;"><strong>$69,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jessica-schramm">Jessica Schramm</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 7.033333333333333%;"><strong>$68,786</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/richard-wendy">Richard Wendy</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 6.952965235173824%;"><strong>$68,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/john-dunn">John Dunn</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 6.339468302658487%;"><strong>$62,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/gary-lapaille">Gary LaPaille</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 6.134969325153374%;"><strong>$60,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jeffrey-dixon">Jeffrey Dixon</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 6.134969325153374%;"><strong>$60,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/robert-goldman">Robert Goldman</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 6.032719836400818%;"><strong>$59,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/william-filan">William Filan</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 5.98159509202454%;"><strong>$58,500</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/mazonne-jackson">Mazonne Jackson</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 5.5725971370143155%;"><strong>$54,500</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/bridget-o-keefe">Bridget O'Keefe</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 5.511656441717792%;"><strong>$53,904</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/patrick-thompson">Patrick Thompson</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 5.368098159509203%;"><strong>$52,500</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/myles-berman">Myles Berman</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 5.214723926380368%;"><strong>$51,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/dionyse-fitzwilliam">Dionyse Fitzwilliam</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 5.112474437627812%;"><strong>$50,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/leonard-jones">Leonard Jones</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 5.112474437627812%;"><strong>$50,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/patrick-huels">Patrick Huels</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 4.9079754601226995%;"><strong>$48,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/gyata-kimmons">Gyata Kimmons</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 4.805725971370143%;"><strong>$47,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/mark-huddle">Mark Huddle</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 4.652351738241308%;"><strong>$45,500</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/mark-fary">Mark Fary</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 4.601226993865031%;"><strong>$45,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/terry-cornell">Terry Cornell</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 4.601226993865031%;"><strong>$45,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/deborah-faktor">Deborah Faktor</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 4.08997955010225%;"><strong>$40,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jeffrey-owen">Jeffrey Owen</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 4.08997955010225%;"><strong>$40,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/john-mcguire">John McGuire</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 4.08997955010225%;"><strong>$40,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/samuel-polsky">Samuel Polsky</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 4.08997955010225%;"><strong>$40,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/thomas-livingston">Thomas Livingston</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 4.08997955010225%;"><strong>$40,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/wayne-magdziarz">Wayne Magdziarz</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 4.08997955010225%;"><strong>$40,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/stephen-scofes">Stephen Scofes</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 3.885480572597137%;"><strong>$38,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/daniel-shomon">Daniel Shomon</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 3.783231083844581%;"><strong>$37,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/thomas-coffey">Thomas Coffey</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 3.783231083844581%;"><strong>$37,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/peter-halpin">Peter Halpin</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 3.6809815950920246%;"><strong>$36,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/william-gainer">William Gainer</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 3.6809815950920246%;"><strong>$36,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/clint-brown">Clint Brown</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 3.640081799591002%;"><strong>$35,600</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/marina-faz-huppert">Marina Faz-Huppert</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 3.5787321063394684%;"><strong>$35,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/patrick-brankin">Patrick Brankin</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 3.5787321063394684%;"><strong>$35,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/david-bonoma">David Bonoma</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 3.476482617586912%;"><strong>$34,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/gregg-graines">Gregg Graines</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 3.1697341513292434%;"><strong>$31,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jeff-riley">Jeff Riley</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 3.1697341513292434%;"><strong>$31,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/brian-hynes">Brian Hynes</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 3.067484662576687%;"><strong>$30,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/john-corrigan">John Corrigan</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 3.067484662576687%;"><strong>$30,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/paul-rosenfeld">Paul Rosenfeld</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 3.067484662576687%;"><strong>$30,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/richard-mell">Richard Mell</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 3.067484662576687%;"><strong>$30,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/robert-molaro">Robert Molaro</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.965235173824131%;"><strong>$29,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/terry-hillard">Terry Hillard</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.8220858895705523%;"><strong>$27,600</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jesse-dodson">Jesse Dodson</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.7607361963190185%;"><strong>$27,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/james-o-rourke">James O'Rourke</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.7300613496932513%;"><strong>$26,700</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/david-narefsky">David Narefsky</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.556237218813906%;"><strong>$25,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/k-nathaniel-paxson">K. Nathaniel Paxson</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.4539877300613497%;"><strong>$24,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/peter-cassel">Peter Cassel</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.4539877300613497%;"><strong>$24,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/victor-reyes">Victor Reyes</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.4539877300613497%;"><strong>$24,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/michael-brown">Michael Brown</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.3517382413087935%;"><strong>$23,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/steven-bauer">Steven Bauer</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.147239263803681%;"><strong>$21,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/steven-friedland">Steven Friedland</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.147239263803681%;"><strong>$21,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/edward-wallace">Edward Wallace</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.0552147239263805%;"><strong>$20,100</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/erika-kruse">Erika Kruse</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.044989775051125%;"><strong>$20,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/hugh-snively">Hugh Snively</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.044989775051125%;"><strong>$20,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jennifer-clark">Jennifer Clark</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.044989775051125%;"><strong>$20,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/kevin-wolfberg">Kevin Wolfberg</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.044989775051125%;"><strong>$20,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/mariah-digrino">Mariah DiGrino</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.044989775051125%;"><strong>$20,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/samuel-panayotovich">Samuel Panayotovich</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 2.044989775051125%;"><strong>$20,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/edward-kus">Edward Kus</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.9427402862985685%;"><strong>$19,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/john-lawlor">John Lawlor</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.820040899795501%;"><strong>$17,800</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/mitchell-carrell">Mitchell Carrell</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.7893660531697342%;"><strong>$17,500</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/joseph-pilewski">Joseph Pilewski</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.738241308793456%;"><strong>$17,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/david-crosson">David Crosson</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.6359918200409%;"><strong>$16,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/christopher-kozicki">Christopher Kozicki</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.5337423312883436%;"><strong>$15,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/richard-prendergast">Richard Prendergast</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.5337423312883436%;"><strong>$15,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/victor-chang">Victor Chang</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.5337423312883436%;"><strong>$15,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/caroline-domagalski">Caroline Domagalski</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.4314928425357873%;"><strong>$14,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/dennis-pedrelli">Dennis Pedrelli</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.4314928425357873%;"><strong>$14,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/john-sciaccotta">John Sciaccotta</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.4314928425357873%;"><strong>$14,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/margaret-vaughn">Margaret Vaughn</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.3803680981595092%;"><strong>$13,500</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/o-kate-tragesser">O. Kate Tragesser</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.329243353783231%;"><strong>$13,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/paul-kolpak">Paul Kolpak</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.329243353783231%;"><strong>$13,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/sandra-kellman">Sandra Kellman</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.329243353783231%;"><strong>$13,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/beth-doria">Beth Doria</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.2269938650306749%;"><strong>$12,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/charles-bernardini">Charles Bernardini</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.2269938650306749%;"><strong>$12,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/dennis-sexton">Dennis Sexton</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.2269938650306749%;"><strong>$12,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/kerry-peck">Kerry Peck</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.2269938650306749%;"><strong>$12,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/milton-sees">Milton Sees</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.2269938650306749%;"><strong>$12,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/thom-serafin">Thom Serafin</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.2269938650306749%;"><strong>$12,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/william-luking">William Luking</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.2269938650306749%;"><strong>$12,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/katriina-mcguire">Katriina McGuire</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.19120654396728%;"><strong>$11,650</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/bernard-citron">Bernard Citron</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.1503067484662577%;"><strong>$11,250</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/bernard-parisot">Bernard Parisot</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.1247443762781186%;"><strong>$11,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/michael-brosko">Michael Brosko</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.0736196319018405%;"><strong>$10,500</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/richard-ingram">Richard Ingram</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.0736196319018405%;"><strong>$10,500</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/robert-repel">Robert Repel</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.0378323108384457%;"><strong>$10,150</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/bradley-davis">Bradley Davis</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.0224948875255624%;"><strong>$10,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/donovan-pepper">Donovan Pepper</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.0224948875255624%;"><strong>$10,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jennifer-fitzgerald">Jennifer Fitzgerald</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.0224948875255624%;"><strong>$10,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/joel-cooper">Joel Cooper</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.0224948875255624%;"><strong>$10,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/john-nicolay">John Nicolay</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.0224948875255624%;"><strong>$10,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/kimberly-mccullough">Kimberly McCullough</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.0224948875255624%;"><strong>$10,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/larry-schaedel">Larry Schaedel</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.0224948875255624%;"><strong>$10,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/michael-ciaccio">Michael Ciaccio</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.0224948875255624%;"><strong>$10,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/mike-ginter">Mike Ginter</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.0224948875255624%;"><strong>$10,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/steven-ginsberg">Steven Ginsberg</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.0224948875255624%;"><strong>$10,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/virginia-pace">Virginia Pace</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.0224948875255624%;"><strong>$10,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/william-hood">William Hood</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.0224948875255624%;"><strong>$10,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/john-watt">John Watt</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 1.0020449897750512%;"><strong>$9,800</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jerry-joyce">Jerry Joyce</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.899795501022495%;"><strong>$8,800</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/richard-guidice">Richard Guidice</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.8384458077709612%;"><strong>$8,200</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/bruce-limatainen">Bruce Limatainen</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.81799591002045%;"><strong>$8,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/dennis-o-sullivan">Dennis O'Sullivan</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.81799591002045%;"><strong>$8,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/james-banks">James Banks</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.81799591002045%;"><strong>$8,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/john-fritchey">John Fritchey</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.81799591002045%;"><strong>$8,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/lesley-magnabosco">Lesley Magnabosco</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.7711656441717791%;"><strong>$7,542</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/miguel-alba">Miguel Alba</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.7157464212678937%;"><strong>$7,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/pablo-brezman">Pablo Brezman</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.7157464212678937%;"><strong>$7,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/terry-teele">Terry Teele</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.7157464212678937%;"><strong>$7,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/anthony-abbinante">Anthony Abbinante</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.6134969325153374%;"><strong>$6,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/james-rice">James Rice</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.6134969325153374%;"><strong>$6,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/john-gust">John Gust</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.6134969325153374%;"><strong>$6,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/robert-markin">Robert Markin</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.6134969325153374%;"><strong>$6,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/anna-kimsey">Anna Kimsey</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.5112474437627812%;"><strong>$5,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/daniel-lynch">Daniel Lynch</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.5112474437627812%;"><strong>$5,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/frank-cortese">Frank Cortese</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.5112474437627812%;"><strong>$5,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/henry-tamarin">Henry Tamarin</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.5112474437627812%;"><strong>$5,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jack-guthman">Jack Guthman</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.5112474437627812%;"><strong>$5,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/kenneth-snyder">Kenneth Snyder</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.5112474437627812%;"><strong>$5,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/lawrence-pusateri">Lawrence Pusateri</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.5112474437627812%;"><strong>$5,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/michael-houlihan">Michael Houlihan</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.5112474437627812%;"><strong>$5,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/warren-silver">Warren Silver</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.5112474437627812%;"><strong>$5,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/william-banks">William Banks</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.5010224948875256%;"><strong>$4,900</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/benjamin-gibson">Benjamin Gibson</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.408997955010225%;"><strong>$4,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/binita-desai">Binita Desai</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.408997955010225%;"><strong>$4,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/catherine-janes">Catherine Janes</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.408997955010225%;"><strong>$4,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/elizabeth-milnikel">Elizabeth Milnikel</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.408997955010225%;"><strong>$4,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/henry-feeley">Henry Feeley</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.408997955010225%;"><strong>$4,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/john-cameron">John Cameron</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.408997955010225%;"><strong>$4,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/michael-lufrano">Michael Lufrano</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.408997955010225%;"><strong>$4,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/nicolas-clochard-bossuet">Nicolas Clochard-Bossuet</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.408997955010225%;"><strong>$4,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/rahsaan-sales">Rahsaan Sales</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.408997955010225%;"><strong>$4,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/sylvia-aldrete">Sylvia Aldrete</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.38323108384458077%;"><strong>$3,748</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/andrew-scott">Andrew Scott</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.3067484662576687%;"><strong>$3,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/courtney-shea">Courtney Shea</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.3067484662576687%;"><strong>$3,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/forrest-russell">Forrest Russell</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.3067484662576687%;"><strong>$3,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/lawrence-suffredin">Lawrence Suffredin</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.3067484662576687%;"><strong>$3,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/marty-paris">Marty Paris</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.3067484662576687%;"><strong>$3,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/ray-kljajic">Ray Kljajic</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.3067484662576687%;"><strong>$3,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/thomas-suffredin">Thomas Suffredin</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.3067484662576687%;"><strong>$3,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/warren-daniels">Warren Daniels</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.3067484662576687%;"><strong>$3,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/nicholas-ammann">Nicholas Ammann</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.28588957055214725%;"><strong>$2,796</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/margaret-houlihan">Margaret Houlihan</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.2556237218813906%;"><strong>$2,500</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/miguel-santiago">Miguel Santiago</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.23517382413087937%;"><strong>$2,300</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/susan-sikes">Susan Sikes</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.23517382413087937%;"><strong>$2,300</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/daniel-finkel">Daniel Finkel</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.2044989775051125%;"><strong>$2,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/grace-yuen-tam">Grace Yuen Tam</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.2044989775051125%;"><strong>$2,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jane-anderson">Jane Anderson</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.2044989775051125%;"><strong>$2,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jean-chidley">Jean Chidley</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.2044989775051125%;"><strong>$2,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jonathan-gonsky">Jonathan Gonsky</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.2044989775051125%;"><strong>$2,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/maggie-sans">Maggie Sans</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.2044989775051125%;"><strong>$2,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/margaret-tinucci">Margaret Tinucci</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.2044989775051125%;"><strong>$2,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/michael-reed">Michael Reed</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.2044989775051125%;"><strong>$2,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/neil-flanagan">Neil Flanagan</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.2044989775051125%;"><strong>$2,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/pamela-sullins">Pamela Sullins</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.2044989775051125%;"><strong>$2,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/ralph-hughes">Ralph Hughes</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.2044989775051125%;"><strong>$2,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/samantha-costanzo">Samantha Costanzo</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.2044989775051125%;"><strong>$2,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/stratford-shields">Stratford Shields</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.2044989775051125%;"><strong>$2,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/william-thorne">William Thorne</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.2044989775051125%;"><strong>$2,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/frank-nagorka">Frank Nagorka</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.15337423312883436%;"><strong>$1,500</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/julie-murphy">Julie Murphy</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.10787321063394682%;"><strong>$1,055</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/cathy-murczek">Cathy Murczek</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.10224948875255625%;"><strong>$1,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/david-stephens">David Stephens</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.10224948875255625%;"><strong>$1,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/emily-schey">Emily Schey</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.10224948875255625%;"><strong>$1,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/gerard-dehrmann">Gerard Dehrmann</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.10224948875255625%;"><strong>$1,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jean-francois-decaux">Jean-Francois Decaux</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.10224948875255625%;"><strong>$1,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jennifer-severs">Jennifer Severs</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.10224948875255625%;"><strong>$1,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/melissa-weber">Melissa Weber</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.10224948875255625%;"><strong>$1,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/robert-kenny">Robert Kenny</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.10224948875255625%;"><strong>$1,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/scott-hodes">Scott Hodes</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.10224948875255625%;"><strong>$1,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/stephen-wood">Stephen Wood</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.10224948875255625%;"><strong>$1,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/timothy-taylor">Timothy Taylor</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.10224948875255625%;"><strong>$1,000</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/william-mack">William Mack</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.10224948875255625%;"><strong>$1,000</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/john-cullerton">John Cullerton</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.07515337423312883%;"><strong>$735</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/andrew-knapp">Andrew Knapp</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.051124744376278126%;"><strong>$500</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/kevin-conlon">Kevin Conlon</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.051124744376278126%;"><strong>$500</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/lawrence-richardson">Lawrence Richardson</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.051124744376278126%;"><strong>$500</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/john-kohlhepp">John Kohlhepp</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.025562372188139063%;"><strong>$250</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/scott-vogel">Scott Vogel</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.02044989775051125%;"><strong>$200</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/clinton-hansen">Clinton Hansen</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.010224948875255624%;"><strong>$100</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/kurtis-holle">Kurtis Holle</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0.010224948875255624%;"><strong>$100</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/adrienne-alexander">Adrienne Alexander</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/albert-boumenot">Albert Boumenot</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/amal-shaqildi">Amal Shaqildi</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/andy-gottschalk">Andy Gottschalk</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/angelica-marks">Angelica Marks</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/anna-kurowska">Anna Kurowska</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/anne-fredd">Anne Fredd</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/anthony-fratto">Anthony Fratto</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/arnold-harris">Arnold Harris</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/avis-lavelle-sampson">Avis LaVelle Sampson</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/brian-forde">Brian Forde</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/carol-stubblefield">Carol Stubblefield</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/charles-parnell">Charles Parnell</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/charles-turley">Charles Turley</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/charlotte-knight-marshall">Charlotte Knight-Marshall</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/christopher-melvin">Christopher Melvin</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/cory-white">Cory White</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/daniel-doherty">Daniel Doherty</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/david-doig">David Doig</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/david-winters">David Winters</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/douglas-mcfarlan">Douglas McFarlan</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/eric-mcloyd">Eric McLoyd</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/francine-lynch">Francine Lynch</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/garrett-phipps">Garrett Phipps</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/james-avgeris">James Avgeris</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/james-beck">James Beck</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jay-gilbert">Jay Gilbert</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jeanette-sublett">Jeanette Sublett</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jeffery-palo">Jeffery Palo</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jeffrey-wong">Jeffrey Wong</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/jerry-wallack">Jerry Wallack</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/kate-gebo">Kate Gebo</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/kevin-barney">Kevin Barney</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/lawrence-hill">Lawrence Hill</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/leah-lacy">Leah Lacy</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/lee-robertson">Lee Robertson</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/lenny-asaro">Lenny Asaro</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/lois-scott">Lois Scott</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/lynn-miller">Lynn Miller</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/mary-george">Mary George</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/maurice-cousin">Maurice Cousin</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/nancy-clawson">Nancy Clawson</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/nathan-lopp">Nathan Lopp</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/paul-streicher">Paul Streicher</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/peter-crosby">Peter Crosby</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/phoebe-selden">Phoebe Selden</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/rajeev-patel">Rajeev Patel</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/richard-carbonara">Richard Carbonara</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/richard-erickson">Richard Erickson</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/richard-ungaretti">Richard Ungaretti</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/riley-simmons">Riley Simmons</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/robert-kunze">Robert Kunze</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/robert-star">Robert Star</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/ronald-mcdermott">Ronald McDermott</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/sandra-widerborg">Sandra Widerborg</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/scott-borstein">Scott Borstein</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/stephen-gorny">Stephen Gorny</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/stewart-mills">Stewart Mills</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/terrance-diamond">Terrance Diamond</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/thomas-duffy">Thomas Duffy</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/todd-hiepler">Todd Hiepler</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="even">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/william-hofherr">William Hofherr</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr><tr class="odd">
+        <td class=" sorting_2"><h3><a href="http://www.chicagolobbyists.org/lobbyists/william-zizic">William Zizic</a></h3></td>
+        <td class="bar sorting_1"><span style="width: 0%;"><strong>$0</strong></span></td>
+      </tr></tbody></table></div>
+
+  <!-- Footer -->
+<div id="footer">
+  <p>Chicago Lobbyists designed and developed by <a href="http://opencityapps.org/">Open City</a>. Copyright © 2012.</p>
+</div>
+<!-- /Footer -->
+
+</div>
+<!-- /Content -->
+
+
+
+</body></html>
